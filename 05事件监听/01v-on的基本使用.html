@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <h2>{{counter}}</h2>
+<!--  <button @click="counter++">+</button>-->
+<!--  <button @click="counter&#45;&#45;">-</button>-->
+<!-- 1 在事件监听的情况下，如果没有参数，可以省略括号-->
+  <button @click="increment()">+</button>
+  <button @click="decrement">-</button>
+<!--  2若果有参数但是未传：increment（）默认undfine，若果没加（）默认传入的是事件对象-->
+<!-- 3 如果不加‘’传入的就是对象名称，如果同时需要普通对象和event对象就要用$event-->
+</div>
+
+<script src="../js/vue.js"></script>
+
+<script>
+
+  const app = new Vue({
+      el: '#app',
+      data: {
+          counter: 0
+      },
+      methods: {
+          increment(){
+              this.counter++;
+          },
+          decrement(){
+              this.counter--;
+          }
+      }
+  })
+
+</script>
+
+</body>
+</html>

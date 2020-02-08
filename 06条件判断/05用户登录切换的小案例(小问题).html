@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+<!--  dom在渲染时会有一个虚拟dom的概念，再通过虚拟dom渲染到浏览器上，会修改后复用，加上key属性，如果值相同则会复用，否则不复用
+
+for点击文字也可以选中-->
+  <span v-if="isUser">
+    <label for="username" > 用户账号</label>
+    <input type="text" id="username" placeholder="用户账号" key="11">
+  </span>
+  <span v-else>
+    <label for="email"> 用户邮箱</label>
+    <input type="text" id="email" placeholder="用户密码" key="22">
+  </span>
+  <button v-on:click="changeType">切换</button>
+</div>
+
+<script src="../js/vue.js"></script>
+
+<script>
+
+  const app = new Vue({
+      el: '#app',
+      data: {
+          message: 'hello',
+          isUser: true
+      },
+      methods: {
+          changeType(){
+              app.isUser = !app.isUser;
+          }
+      }
+  })
+
+</script>
+
+
+</body>
+</html>

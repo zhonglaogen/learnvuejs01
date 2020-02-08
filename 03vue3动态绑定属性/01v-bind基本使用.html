@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  {{message}}
+<!--  语法唐可以直接写：-->
+  <img v-bind:src="imgurl" alt="">
+</div>
+
+<script src="../js/vue.js"></script>
+
+<script>
+
+  const app = new Vue({
+      el: '#app',
+      data: {
+          message: 'hello',
+          imgurl: 'https://i0.hdslb.com/bfs/archive/b51177c146b40e50cc61b29a4b7b5a1a0f3245a5.jpg@1100w_484h_1c_100q.jpg'
+      }
+  })
+
+</script>
+
+
+</body>
+</html>

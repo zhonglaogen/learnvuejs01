@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+<!--  1修饰符：lazy,敲回车才会加载  或失去焦点-->
+  <input type="text" v-model.lazy="message">
+<!--  2 number ,虽然样式是数字，但是vue会把内容变为字符串-->
+  <input type="number" v-model.number="age">
+  <h2>{{age}} -- {{typeof age}}</h2>
+<!--去掉空格-->
+  <input type="number" v-model.trim="name">
+  <h2>{{age}} -- {{typeof age}}</h2>
+
+</div>
+
+<script src="../js/vue.js"></script>
+
+<script>
+
+  const app = new Vue({
+      el: '#app',
+      data: {
+          message: 'hello',
+          age: 0,
+          name: ''
+      }
+  })
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  {{message}}
+</div>
+
+<script src="../js/vue.js"></script>
+
+<script>
+
+  const app = new Vue({
+      el: '#app',
+      data: {
+          message: 'hello'
+      },
+      //每次都会调用方法
+      methods: {},
+      //有缓存只会调用一次，只有更改才会调用
+      computed: {}
+  })
+
+</script>
+
+
+</body>
+</html>

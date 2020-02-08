@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  {{message}}
+<!--  显示解析-->
+  <h1 v-html = "message"></h1>
+<!--  显示原文-->
+  <h1 v-text = "message">被覆盖</h1>
+</div>
+
+<script src="../js/vue.js"></script>
+
+<script>
+
+  const app = new Vue({
+      el: '#app',
+      data: {
+          message: '<a href="https://www.baidu.com">hello<a>'
+      }
+  })
+
+</script>
+
+</body>
+</html>

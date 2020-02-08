@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <select name="abc" v-model="fruit">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select>
+  <hr>
+
+  <select name="abc" v-model="fruits" multiple>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select>
+  <h2>{{fruits}}</h2>
+
+  <label v-for="item in hobits" :for="item">
+    <input type="checkbox" :value="item" :id="item" v-model="hobits">{{item}}
+  </label>
+</div>
+
+<script src="../js/vue.js"></script>
+
+<script>
+
+  const app = new Vue({
+      el: '#app',
+      data: {
+          fruit: '3',
+          fruits: [],
+          hobits: ['a','b','c','d']
+      }
+  })
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+</head>
+<body>
+
+  <div id="app">
+    <ul>
+<!--      key必须是11对应的关系，不能是index，index会发生变化做不到11对应，有key会先11对应key的值，再插入，不会很傻的diff，逐个的替换值-->
+      <li v-for="item in info" :key="item"></li>
+    </ul>
+  </div>
+
+  <script src="../js/vue.js"></script>
+
+  <script>
+    //数组的splice方法（index，count，‘A’）第一个参数表示在那个位置，第二个元素表示删除几个元素，以后的为插入的元素
+    const app = new Vue({
+        el: '#app',
+        data: {
+            info: {
+                name: 'Jms',
+                age: 29,
+                height: '1.8'
+            }
+        }
+    })
+
+  </script>
+
+</body>
+</html>

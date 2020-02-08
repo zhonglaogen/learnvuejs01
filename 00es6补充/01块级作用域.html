@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<button>按钮1</button>
+<button>按钮2</button>
+<button>按钮3</button>
+<button>按钮4</button>
+<button>按钮5</button>
+
+
+<script>
+  //在es5之前if和for都没有块级作用域的概念，必须借助与闭包function的作用于，来解决应用到外面的变量的问题
+ // es6加入let有if和for的作用域
+ // 01变量在什么范围内是可用的
+ {
+     var name = 'a';
+     console.log(name);
+ }
+ console.log(name);
+//    02没有块级作用域引起的问题,if
+
+
+ var func;
+  if(true){
+      var name1 = 'a'
+      func = function () {
+          console.log(name1);
+      }
+  }
+  name1 = 'b'
+func()
+//  03for的块
+
+  var btns = document.getElementsByTagName('button');
+ // 变量一直在改变，导致按哪个按钮都是第五个
+ //为什么闭包可以解决问题，函数是一个作用域
+ for (var i = 0; i < btns.length; i++) {
+     // btns[i].addEventListener('click',function () {
+     //     console.log('NO ' + i + '按钮被点击');
+     // })
+     (function (i) {
+         btns[i].addEventListener('click',function () {
+             console.log('NO ' + i + '按钮被点击');
+         })
+     })(i)
+ }
+
+
+
+</script>
+
+</body>
+</html>

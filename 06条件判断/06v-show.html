@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+<!--  第一个元素压根不在html中显示 只进行一次判断-->
+  <h2 v-if="isShow" id="aaa">{{message}}</h2>
+<!--  第二个虽然不显示，但是html标签实际在，只是改变样式 适合多次判断-->
+  <h2 v-show="isShow" id="bbb">{{message}}</h2>
+
+</div>
+
+<script src="../js/vue.js"></script>
+
+<script>
+
+  const app = new Vue({
+      el: '#app',
+      data: {
+          isShow: true
+      }
+  })
+
+</script>
+
+
+</body>
+</html>

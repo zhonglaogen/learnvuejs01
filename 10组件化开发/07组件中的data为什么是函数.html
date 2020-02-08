@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <cpn></cpn>
+  <cpn></cpn>
+  <cpn></cpn>
+</div>
+
+<template id="cpn">
+  <div >
+    <h1>当前计数: {{count}}</h1>
+    <button @click="incre">+</button>
+    <button @click="decre">-</button>
+  </div>
+</template>
+
+<script src="../js/vue.js"></script>
+
+<script>
+  const obj = {
+      count: 0
+  }
+  //1.注册组件
+  Vue.component('cpn',{
+      template: '#cpn',
+      //若果不是函数，那么组件数据就是共享的
+      data(){
+          return {
+              count: 0
+          }
+      },
+      // data(){
+      //     return obj
+      // },
+      methods: {
+          incre(){
+             this.count++
+          },
+          decre(){
+              this.count--
+          }
+      }
+  })
+  const app = new Vue({
+      el: '#app',
+
+  })
+
+</script>
+
+</body>
+</html>

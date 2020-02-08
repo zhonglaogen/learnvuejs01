@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+  .activity{
+    color: red
+  }
+</style>
+<body>
+
+<div id="app">
+<!--  true的class会被绑定-->
+  <h2 class="不会被覆盖" :class="{activity:isactivity,line:isline}">{{message}}</h2>
+<!--  太长可以通过函数-->
+  <h2 class="不会被覆盖" :class="getClass()">{{message}}</h2>
+  <h2 :class="xx">{{message}}</h2>
+  <button v-on:click="change">按钮</button>
+</div>
+
+<script src="../js/vue.js"></script>
+
+<script>
+
+  const app = new Vue({
+      el: '#app',
+      data: {
+          message: 'hello',
+          xx: 'activity',
+          isactivity: true,
+          isline: true
+      },
+      methods:{
+          change: function () {
+            this.isactivity = !this.isactivity
+          },
+          getClass: function () {
+            return {activity:this.isactivity,line:this.isline}
+          }
+      }
+  })
+
+</script>
+
+
+</body>
+</html>

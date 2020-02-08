@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <ul>
+    <li v-for="item in arrys" >{{item}}</li>
+  </ul>
+  <button @click="btnclick">按钮</button>
+</div>
+
+<script src="../js/vue.js"></script>
+
+<script>
+
+  const app = new Vue({
+      el: '#app',
+      data: {
+          arrys: [1,2,3,4]
+      },
+      methods: {
+          btnclick() {
+              //1.push，响应式，可以加多个
+              // this.arrys.push(0)
+
+          //    pop，shift删除数组中的第一个元素，unshift在数组最前面添加元素，splice删除插入替换，sort，reverse翻转
+
+              //    2.通过索引值修改数组中的元素,不是响应式的，改变后页面没改变
+              //     this.arrys[0] = 9
+              //响应式
+              Vue.set(this.arrys,0,9)
+
+
+
+          }
+
+      }
+  })
+
+</script>
+
+
+</body>
+</html>

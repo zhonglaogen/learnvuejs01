@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    [v-cloak]{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div id="app">
+<!--  vue 解析之前有这个属性，解析之后这个属性就没了-->
+  <h1 v-cloak>{{message}}</h1>
+</div>
+
+<script src="../js/vue.js"></script>
+
+<script>
+  setTimeout(function () {
+          const app = new Vue({
+              el: '#app',
+              data: {
+                  message: 'hello'
+              }
+          })
+  },1000)
+
+
+</script>
+
+
+</body>
+</html>

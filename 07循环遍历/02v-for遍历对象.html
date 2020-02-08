@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+
+<div id="app">
+
+  <ul>
+<!--    拿到的是value-->
+    <li v-for="(item,key,index) in info">{{item}}</li>
+  </ul>
+</div>
+
+<script src="../js/vue.js"></script>
+
+<script>
+
+  const app = new Vue({
+      el: '#app',
+      data: {
+          info: {
+              name: 'Jms',
+              age: 29,
+              height: '1.8'
+          }
+      }
+  })
+
+</script>
+
+</body>
+</html>

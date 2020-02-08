@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+<!--    ul>li tab  动态增加模式-->
+    <ul>
+        <li>{{moives[0]}}</li>
+        <li v-for="item in moives">{{item}}</li>
+    </ul>
+
+</div>
+
+<script src="../js/vue.js"></script>
+
+
+<script>
+    const app = new Vue({
+        el : '#app',
+        data : {
+            message : '你好',
+            moives : ['猫和老鼠','火影','哪吒','大话西游']
+        }
+    })
+</script>
+
+</body>
+</html>

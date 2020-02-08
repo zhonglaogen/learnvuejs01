@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app" @click="divclick">
+  {{message}}
+<!--  上层div也会被执行事件-->
+<!--  1利用.stop来阻止上层执行-->
+  <button @click.stop="btnclick">安妮</button>
+
+<!--  2prevent修饰符,自己处理了就不用action的处理了-->
+  <form action="baidu">
+    <input type="submit" value="提交" @click.prevent="sub">
+  </form>
+<!--  加上.enter就是特殊按键的监听-->
+  <input type="text" @keyup.enter="keyclick">
+<!--  3监听某个按键的点解-->
+
+<!--  4.once只触发一次-->
+
+</div>
+
+<script src="../js/vue.js"></script>
+
+<script>
+
+  const app = new Vue({
+      el: '#app',
+      data: {
+          message: 'hello'
+      },
+      methods: {
+          divclick(){
+              console.log('divclick');
+          },
+          btnclick(){
+              console.log('btnclick');
+          },
+          sub(){
+              console.log('submit');
+          },
+          keyclick(){
+              console.log('keyclick');
+          }
+      }
+  })
+
+</script>
+
+
+</body>
+</html>
