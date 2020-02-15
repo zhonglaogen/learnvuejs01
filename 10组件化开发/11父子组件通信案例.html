@@ -10,7 +10,7 @@
   <h2>{{num2}}</h2>
   <hr>
  <cpn  v-bind:cnum1="num1"
-       :cnum2="num2" @num1change="num1change" @num2change="num2change"></cpn>
+       :cnum2="num2" @num1change="pnum1change" @num2change="pnum2change"></cpn>
 </div>
 
 <template id="cpn">
@@ -42,10 +42,10 @@
           num2: 2
       },
       methods: {
-          num1change(num){
+          pnum1change(num){
             this.num1 = num * 1
           },
-          num2change(num){
+          pnum2change(num){
               this.num2 = parseInt(num)
           }
       },
