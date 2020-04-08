@@ -6,14 +6,16 @@
 </head>
 <body>
 <div id="app">
-<!--  1修饰符：lazy,敲回车才会加载  或失去焦点-->
+<!--  1修饰符：lazy,敲回车才会加载  或失去焦点
+当v-model使用.lazy修饰符之后，改变input框中的内容并不会使得数据马上发生变化，
+此时当输入框失去焦点后触发change事件.控制台中输出相应内容。-->
   <input type="text" v-model.lazy="message">
 <!--  2 number ,虽然样式是数字，但是vue会把内容变为字符串-->
   <input type="number" v-model.number="age">
   <h2>{{age}} -- {{typeof age}}</h2>
 <!--去掉空格-->
-  <input type="number" v-model.trim="name">
-  <h2>{{age}} -- {{typeof age}}</h2>
+  <input type="text" v-model.trim="name">
+  <h2>{{name}} -- {{typeof age}}</h2>
 
 </div>
 

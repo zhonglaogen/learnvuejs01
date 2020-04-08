@@ -10,10 +10,10 @@
  <cpn>
 <!--   获取子组件的数据-->
 
-<!--   目的是获取子组件的数据-->
-   <template slot-scope="slot">
+<!--   目的是获取子组件的数据  slot-scope表示的是插槽的作用域-->
+   <template slot-scope="xxx">
 <!--     <span v-for="item in slot.data">{{item}}-</span>-->
-     <span>{{slot.data.join('-')}}</span>
+     <span>{{xxx.data.join('-')}}</span>
    </template>
  </cpn>
 </div>
